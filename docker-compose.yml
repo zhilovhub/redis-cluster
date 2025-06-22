@@ -17,9 +17,9 @@ services:
       context: ./sentinel
       dockerfile: Dockerfile
     container_name: redis-sentinel
-  environment:
-  - SENTINEL_DOWN_AFTER=5000
-  - SENTINEL_FAILOVER=5000
-  depends_on:
-  - master
-  - slave
+    environment:
+    - SENTINEL_DOWN_AFTER=5000
+    - SENTINEL_FAILOVER=5000
+    depends_on:
+    - master
+    - slave
